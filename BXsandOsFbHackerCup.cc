@@ -1,3 +1,5 @@
+//unfinished
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -16,10 +18,15 @@ int main() {
 
     for(int i=0; i<n;i++) {
       int x = 0;
-      char temp;
-      cin >> temp;
+      //char temp;
+      //cin >> temp;
       for(int j=0; j<n;j++) {
-        
+        char temp;
+        cin >> temp;
+        if(temp == 'O') {
+          continue;
+        }
+
       }
     }
 

@@ -1,50 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-  int cases;
-  cin >> cases;
-  for(int i=0; i<cases;i++){
+struct Ingredient{
+  string name;
+  double weight;
+  double per;
+  double scaled;
+  bool main = false;
+};
+
+
+int main() {
+  int t;
+  cin >> t;
+  int case_num =1;
+  for(int i=1; i<t+1; i++) {
+    cout << "Recipe # " << case_num++ << endl;
     int r;
-    int p;
-    int d;
+    double p;
+    double d;
     cin >> r >> p >> d;
 
+    double scaling = d/p;
+    double mainScale = 0;
 
+    vector<Ingredient> food;
 
+    for(int j=0; j<r;j++) {
+      Ingredient temp;
+      cin >> temp.name >> temp.weight >> temp.per;
+      if (temp.per == 100.0) {
+        temp.main = true;
+        temp.scaled = (temp.weight*scaling);
+        mainScale = temp.scaled/100;
+      }
+      food.push_back(temp);
+    }
+    for(auto a:food) {
+      if(!a.main) {
+        a.scaled = (a.per*mainScale);
+      }
+      cout << fixed << setprecision(1) << a.name << " " << a.scaled << endl;
+    }
+    food.clear();
+    cout << setfill('-') << setw(40) << "" << endl;
   }
-  //cout:
-  cout << " ";
-  //cin:
-  cin >> "";
-
-  //round up
-  (A+(B-1)) /B
-
   return 0;
 }
-
-  //string concatenationto int
-  string a;
-  string r = a;
-  stoi(a+r);
-
-  //sort
-  sort(begin(t), end(t));   //== sort(t.begin(), t.end())DONT USE
-  //sort greatest/largest
-  sort(begin(t), end(t), cmp); //greater<int>, orcomparison a>b, a<b
-  //->reversible containers can be looped backwards
-  sort(t.rbegin(), t.rend()); //increasing order backwards
-
-  //uninitialized for loop ex:
-  int n, m;
-  vector<int> t(n), l(m);
-  int t_i = 0. l_i = 0;
-  for( ; l_i < m; l_i++){
-    for ( ; t_i < n && t[t_i] > l[l_i]; t_i++)
-    ;
-    if (t_i++ >= n) break;
-  }
-
-  //for checking diff in cmd line
-  prog < input | diff - output
