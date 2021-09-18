@@ -7,14 +7,16 @@ int main() {
   for(int i=0; i<cases;i++) {
     int n;
     cin >> n;
-    int current = 0;
+    bool odd;
     int total = 0;
-    int array[n];
+    priority_queue<int> pq1;
+    priority_queue<int> pq2;
     for(int j=0; j<n;j++){
       int a;
-      if(array[j] <)
-      cin >> array[j];
-
+      cin >> a;
+      pq1.push(a);
+      
+      odd
     }
 
     sort()
