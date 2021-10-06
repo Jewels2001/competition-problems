@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//long long
+typedef long long ll;
+
 int main() {
   //cout:
   cout << " ";
@@ -17,6 +20,9 @@ int main() {
 //with cases
 #include <bits/stdc++.h>
 using namespace std;
+
+//long long
+typedef long long ll;
 
 int main() {
   int cases;
@@ -40,6 +46,17 @@ int main() {
   string r = a;
   stoi(a+r);
 
+  //string word parsing
+  int main() {
+    string line, word;
+    while(getline(cin, line)) {
+      istringstream iss(line);
+      while(iss>>word) {
+        // code goes here
+      }
+    }
+  }
+
   //sort
   sort(begin(t), end(t));   //== sort(t.begin(), t.end())DONT USE
   //sort greatest/largest
@@ -59,3 +76,31 @@ int main() {
 
   //for checking diff in cmd line
   prog < input | diff - output
+
+
+  //random minSwaps function
+  int minSwaps(vector<int> arr, int n) {
+    vector<pair<int, int>> arrPos(n);
+      for(int i=0; i<n;i++){
+      arrPos[i].first = arr[i];
+      arrPos[i].second = i;
+    }
+    sort(arrPos.begin(), arrPos.end());
+    vector<bool> visited(n, false);
+    int ans = 0;
+    for(int i=0;i<n;i++){
+      if (visited[i] || arrPos[i].second == i)
+        continue;
+      int cycle_size = 0;
+      int j = i;
+      while(!visited[j]){
+        visited[j] = 1;
+        j = arrPos[j].second;
+        cycle_size++;
+      }
+      if(cycle_size > 0){
+        ans += (cycle_size - 1);
+      }
+    }
+    return ans;
+  }

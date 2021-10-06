@@ -12,7 +12,7 @@ int main() {
       cout << ans;
     }
     else {
-    ans = ceil(n/400);
+    ans =   (n+(400-1))/400;
     cout << ans;
     }
     cout << endl;
