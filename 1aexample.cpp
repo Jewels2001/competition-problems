@@ -35,7 +35,7 @@ int main() {
 
     //round up
     (A+(B-1)) /B
-
+    cout<< "Case #" << cases << ": " << ans << endl;
   }
   return 0;
 }
