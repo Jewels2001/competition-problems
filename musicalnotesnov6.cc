@@ -1,7 +1,4 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
+#include <bits/stdc++.h>
 using namespace std;
 
 int main(){
@@ -22,32 +19,42 @@ int main(){
   int num;
   cin >> num;
 
-  vector<string> scales;
-  string myStrings[12] = {'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'}
+  vector<string> scales[12];
+  string notes[12] = {"A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"};
   int major[7] = { 2, 2, 1, 2, 2, 2, 1 };
 
 
-  vector<string> notes;
-  for(int i=0; i<notes.size(); i++){
+
+  for(int i=0; i<12; i++){
     int index = i;
     scales[i].push_back(notes[index]);
-    bool same = false;
-    for(int j=0; j<notes.size()<j++){
-      if(notes.at(j) == notes.at(i)){
-        notes.erase(i);
+
+    for(int j=0; j<7;j++) {
+      index += major[j];
+      index %= 12;
+      scales[i].push_back(notes[index]);
     }
   }
 
-    for(int i=0; i<num; i++){
-      if(!(notes.at(i) )
+  string song[100];
+  for(int i=0;i<num;i++){
+    cin >> song[i];
+  }
+
+  int found = 0;
+  for(int i=0; i<12; i++){
+    bool same = true;
+    for(int j=0; j<num;j++){
+      same &= find(begin(scales[i]), end(scales[i]), song[j]) != end(scales[i]);
+    }
+    if (same) {
+      cout << notes[i] << ' ';
+      found++;
     }
   }
-
-  for(int i=0;i<notes.size();i++){
-    for(int j=0; j<)
-    if((notes.at(j)== myStrings[])
+  if (!found) {
+    cout << "none" << endl;
   }
-
-  cout << "none" << endl;
+  cout << endl;
   return 0;
 }

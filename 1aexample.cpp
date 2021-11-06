@@ -3,6 +3,7 @@ using namespace std;
 
 //long long
 typedef long long ll;
+const double PI = acos(-1.0);
 
 int main() {
   //cout:
@@ -23,6 +24,7 @@ using namespace std;
 
 //long long
 typedef long long ll;
+const double PI = acos(-1.0);
 
 int main() {
   int cases;
@@ -40,6 +42,10 @@ int main() {
   return 0;
 }
 
+// Ways to change to binary
+bitset<32> bs (number);
+
+__builtin_popcount(number)
 
   //string concatenationto int
   string a;
