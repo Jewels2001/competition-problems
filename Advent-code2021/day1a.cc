@@ -1,4 +1,3 @@
-//with cases
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -13,13 +12,19 @@ int main() {
   } while (one);
 
   int a = data.size();
-  int lastSeen = data[0];
+  int part1 = data[0];
+  int part2 = data[1];
+  int part3 = data[2];
+  int lastSum = part1 + part2 + part3;
   for(int i=1; i<a; i++) {
-    int next = data[i];
-    if(next > lastSeen) {
+    int part1 = data[i];
+    int part2 = data[i+1];
+    int part3 = data[i+2];
+    int sum = part1 + part2 + part3;
+    if(sum > lastSum) {
       ans++;
     }
-    lastSeen = data[i];
+    lastSum = sum;
   }
   cout << ans << endl;
   return 0;
