@@ -7,6 +7,7 @@ int main() {
   vector<int> data;
   int ans = 0;
 
+  //end-of-file input on windows is ctrl-z
   do{
     cin >> one;
     data.push_back(one);

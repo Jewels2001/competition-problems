@@ -43,6 +43,8 @@ int main() {
 }
 
 // Ways to change to binary
+//the 32 can be changed to the number you need,
+//ie 10110 is 5 long so use bitset<5>
 bitset<32> bs (number);
 
 __builtin_popcount(number)
