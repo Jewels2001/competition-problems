@@ -2,6 +2,7 @@
 using namespace std;
 
 
+
 bool checkBoard(vector<vector<pair<int, bool>>>& board) {
   //check rows bingo for one board
   for(int j=0; j<5;j++) {
@@ -71,6 +72,7 @@ int main() {
   int num;
   char temp;
   int winner = -1;
+  set<int> last;
   while(ss >> num >> temp) {
     bool win = false;
     //stringstream
@@ -89,9 +91,19 @@ int main() {
       //check if board has won
       if(checkBoard(bingo[i])) {
         winner = i;
-        cout << "winner: " << winner << endl;
+        if(last.find(winner) == last.end()) {
+          last.insert(winner);
+          cout << "winner: " << winner << endl;
+        }
+        // break;
+      }
+      if(last.size() == bingo.size()) {
+        win = true;
         break;
       }
+    }
+    if(win) {
+      break;
     }
   }
 
@@ -104,6 +116,7 @@ int main() {
       }
     }
   }
+  cout << "sum: " << sum << " num: " << num << endl;
   cout << "sum * num: " << sum*num << endl;
 
   return 0;
