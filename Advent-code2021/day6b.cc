@@ -1,26 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int DAYS = 80;
+typedef long long ll;
+ll DAYS = 256;
 
 int main() {
-  int a[9] = {0};
-  int ans=0;
+  ll a[9] = {0};
+  ll ans=0;
 
-  int b;
+  ll b;
   char t;
   while (cin >> b >> t) {
     a[b]++;
   }
-  cout << "initial" << endl;
-  for(int k=0; k<9;k++) {
-    cout << a[k] << ",";
-  }
 
-  for(int i=0; i<DAYS;i++) {
-    int temp[9];
+  for(ll i=0; i<DAYS;i++) {
+    ll temp[9];
     //change timers
-    for(int j=8; j>=0;j--) {
+    for(ll j=8; j>=0;j--) {
 
       if(j != 0) {
         temp[j-1]=a[j];
@@ -32,7 +29,7 @@ int main() {
       }
     }
     cout << "After day " << i << " ";
-    for(int k=0; k<9;k++) {
+    for(ll k=0; k<9;k++) {
       cout << a[k] << ",";
     }
     cout << endl;
@@ -40,7 +37,7 @@ int main() {
     copy(temp, temp+9, a);
   }
 
-  for(int i=0; i<9; i++) {
+  for(ll i=0; i<9; i++) {
     ans+= a[i];
   }
   cout << ans << endl;
