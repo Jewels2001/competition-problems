@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//long long
 typedef long long ll;
 const double PI = acos(-1.0);
 #define INF 1000000000
@@ -24,9 +23,9 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 
-//long long
 typedef long long ll;
 const double PI = acos(-1.0);
+#define INF 1000000000
 
 int main() {
   int cases;
@@ -51,7 +50,7 @@ bitset<32> bs (number);
 
 __builtin_popcount(number)
 
-  //string concatenationto int
+  //string concatenation to int
   string a;
   string r = a;
   stoi(a+r);
