@@ -30,7 +30,7 @@ const double PI = acos(-1.0);
 int main() {
   int cases;
   cin >> cases;
-  for(int i=0; i<cases;i++) {
+  for(int i=0; i<cases;i++) { // while(cases--) {
     //cout:
     cout << " ";
     //cin:
@@ -38,7 +38,7 @@ int main() {
 
     //round up
     (A+(B-1)) /B
-    cout<< "Case #" << cases << ": " << ans << endl;
+    cout << "Case #" << cases << ": " << ans << endl;
   }
   return 0;
 }
@@ -49,6 +49,8 @@ int main() {
 bitset<32> bs (number);
 
 __builtin_popcount(number)
+//set stack size on windows
+g++ -Wl,--stack,numinbytes -std=c++......
 
   //string concatenation to int
   string a;
@@ -72,6 +74,9 @@ __builtin_popcount(number)
   sort(begin(t), end(t), cmp); //greater<int>, orcomparison a>b, a<b
   //->reversible containers can be looped backwards
   sort(t.rbegin(), t.rend()); //increasing order backwards
+
+  //replace
+  replace(begin(t),end(t),'-',' ');
 
   //uninitialized for loop ex:
   int n, m;
