@@ -11,6 +11,7 @@ int main() {
   cout << " ";
   //cin:
   cin >> "";
+  //debug cerr
 
   //round up
   (A+(B-1)) /B
@@ -28,17 +29,19 @@ const double PI = acos(-1.0);
 #define INF 1000000000
 
 int main() {
-  int cases;
-  cin >> cases;
-  for(int i=0; i<cases;i++) { // while(cases--) {
+  int t;
+  cin >> t;
+  int cases = 1;
+  while(t--) {
     //cout:
     cout << " ";
     //cin:
     cin >> "";
+    //debug cerr
 
     //round up
     (A+(B-1)) /B
-    cout << "Case #" << cases << ": " << ans << endl;
+    cout << "Case #" << cases++ << ": " << ans << endl; //case++
   }
   return 0;
 }
@@ -77,6 +80,9 @@ g++ -Wl,--stack,numinbytes -std=c++......
 
   //replace
   replace(begin(t),end(t),'-',' ');
+
+  //function that can compute relative primes of n (non-factors), gcd(x, n) = 1
+  //Euler phi function(p^k - p^(k-1)) = p^(k-1) * (p-1)
 
   //uninitialized for loop ex:
   int n, m;
