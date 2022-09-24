@@ -4,30 +4,22 @@ using namespace std;
 int main() {
   int cases;
   cin >> cases;
-  for(int i=0;i< cases; i++) {
+  while(cases--) {
     int l, n;
     cin >> l >> n;
-    /*if(l==0) {
-      cout << "0" << "0" <<
-    }*/
-    int best = l;
-    int worst = 0;
+    int earliest = 0;
+    int latest = 0;
+
     for(int j=0; j<n; j++) {
-      int temp;
-      cin >> temp;
+      int ant = 0;
+      cin >> ant;
 
-      //best = min(best, temp);
+      int left = ant;
+      int right = l-ant;
+      earliest = max( min(left, right), earliest);
+      latest = max(max(left, right), latest);
     }
+    cout << earliest << " " << latest << endl;
   }
-
-  best = l - best;
-  //cout:
-  cout << " ";
-  //cin:
-  cin >> "";
-
-  //round up
-  (A+(B-1)) /B
-
   return 0;
 }
