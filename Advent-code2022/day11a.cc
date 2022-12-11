@@ -3,10 +3,10 @@ using namespace std;
 
 struct Monkey {
     char opChar = ' ';
-    int opNum;
-    int test;
-    int t;
-    int f;
+    int opNum = -1;
+    int test = -1;
+    int t = -1;
+    int f = -1;
 };
 
 const int monkeys = 4;
@@ -19,12 +19,13 @@ vector<int> inspections(monkeys, 0);
 
 int monkeyTurn(int monkeyNum, int currentMonkeyBusi) {
     int curr = currentMonkeyBusi;
-    for(int i=0; i<worry[monkeyNum].size(); i++) {
+    while(!worry[monkeyNum].empty()){
         int item = worry[monkeyNum].front(); worry[monkeyNum].pop();
         int n= 0;
         if(lol[monkeyNum].opNum = -1) {
           lol[monkeyNum].opNum = n;
         }
+        cout << "here" << endl;
         switch(lol[monkeyNum].opChar) {
             case('*'):
                 n = item * lol[monkeyNum].opNum;
@@ -33,12 +34,15 @@ int monkeyTurn(int monkeyNum, int currentMonkeyBusi) {
                 n = item + lol[monkeyNum].opNum;
                 break;
         }
+        cout << "not" << endl;
         n /= 3;
+        cout << lol[monkeyNum].test << " " << lol[monkeyNum].t << " " << lol[monkeyNum].f << endl;
         if((n % lol[monkeyNum].test) == 0) {
             worry[lol[monkeyNum].t].push(n);
         } else {
             worry[lol[monkeyNum].f].push(n);
         }
+        cout << "what" << endl;
 
         curr++;
     }
@@ -72,12 +76,12 @@ int main() {
         getline(cin, a);
         cout << "HI" << a << endl;
         char smh;
-        string aaah;
+        string aaah = " ";
         ss << a;
         ss >> temp >> temp >> temp >> temp >> smh >> aaah;
         yolo.opChar = smh;
         if(isdigit(aaah[0])) {
-          yolo.opNum = atoi(aaah[0]);
+          yolo.opNum = stoi(aaah);
         } else if(aaah == "old") {
           yolo.opNum = -1;
         }
@@ -99,6 +103,7 @@ int main() {
         cout << "HI" << a << endl;
         ss << a;
         ss >> temp >> temp >> temp >> temp >> temp >> aa;
+        cout << aa << endl;
         yolo.f = aa;
 
         lol[i] = yolo;
