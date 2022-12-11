@@ -56,7 +56,7 @@ int main() {
         getline(cin, a);
         string temp;
         int aa;
-        istringstream ss;
+        stringstream ss;
         ss << a;
         ss >> temp >> temp;
         while(ss >> aa) {
