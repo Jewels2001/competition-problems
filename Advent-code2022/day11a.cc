@@ -74,7 +74,7 @@ int main() {
         getline(cin, a);
         ss << a;
         ss >> temp >> temp >> temp >> aa;
-        yolo.test = aa'
+        yolo.test = aa;
         //true
         getline(cin, a);
         ss << a;
