@@ -9,12 +9,12 @@ struct Monkey {
     int f;
 };
 
-const int monkeys = 9;
+const int monkeys = 4;
 const int ROUNDS = 20;
-vector<queue<int>> worry(9, queue<int>());
-vector<Monkey> lol(9);
+vector<queue<int>> worry(monkeys, queue<int>());
+vector<Monkey> lol(monkeys);
 
-vector<int> inspections(9, 0);
+vector<int> inspections(monkeys, 0);
 
 
 int monkeyTurn(int monkeyNum, int currentMonkeyBusi) {
@@ -22,6 +22,9 @@ int monkeyTurn(int monkeyNum, int currentMonkeyBusi) {
     for(int i=0; i<worry[monkeyNum].size(); i++) {
         int item = worry[monkeyNum].front(); worry[monkeyNum].pop();
         int n= 0;
+        if(lol[monkeyNum].opNum = -1) {
+          lol[monkeyNum].opNum = n;
+        }
         switch(lol[monkeyNum].opChar) {
             case('*'):
                 n = item * lol[monkeyNum].opNum;
@@ -59,34 +62,47 @@ int main() {
         stringstream ss;
         ss << a;
         ss >> temp >> temp;
+        char wow;
         while(ss >> aa) {
+          ss >> wow;
             worry[i].push(aa);
             cout << aa << endl;
         }
         //operation
         getline(cin, a);
+        cout << "HI" << a << endl;
         char smh;
+        string aaah;
         ss << a;
-        ss >> temp >> temp >> temp >> temp >> smh >> aa;
+        ss >> temp >> temp >> temp >> temp >> smh >> aaah;
         yolo.opChar = smh;
-        yolo.opNum = aa;
+        if(isdigit(aaah[0])) {
+          yolo.opNum = atoi(aaah[0]);
+        } else if(aaah == "old") {
+          yolo.opNum = -1;
+        }
+        //yolo.opNum = aa;
         // test
         getline(cin, a);
+        cout << "HI" << a << endl;
         ss << a;
         ss >> temp >> temp >> temp >> aa;
         yolo.test = aa;
         //true
         getline(cin, a);
+        cout << "HI" << a << endl;
         ss << a;
         ss >> temp >> temp >> temp >> temp >> temp >> aa;
         yolo.t = aa;
         //false
         getline(cin, a);
+        cout << "HI" << a << endl;
         ss << a;
         ss >> temp >> temp >> temp >> temp >> temp >> aa;
         yolo.f = aa;
 
         lol[i] = yolo;
+        getline(cin, a);
     }
 
     int round = 0;
