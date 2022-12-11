@@ -2,7 +2,7 @@
 using namespace std;
 
 struct Monkey {
-    char opChar = '';
+    char opChar = ' ';
     int opNum;
     int test;
     int t;
@@ -20,7 +20,7 @@ vector<int> inspections(9, 0);
 int monkeyTurn(int monkeyNum, int currentMonkeyBusi) {
     int curr = currentMonkeyBusi;
     for(int i=0; i<worry[monkeyNum].size(); i++) {
-        int item = worry[monkeyNum].top(); worry[monkeyNum].pop();
+        int item = worry[monkeyNum].front(); worry[monkeyNum].pop();
         int n= 0;
         switch(lol[monkeyNum].opChar) {
             case('*'):
@@ -31,7 +31,7 @@ int monkeyTurn(int monkeyNum, int currentMonkeyBusi) {
                 break;
         }
         n /= 3;
-        if((n % test) == 0) {
+        if((n % lol[monkeyNum].test) == 0) {
             worry[lol[monkeyNum].t].push(n);
         } else {
             worry[lol[monkeyNum].f].push(n);
